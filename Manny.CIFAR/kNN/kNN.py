@@ -9,18 +9,18 @@ class kNN(object):
   def __init__(self):
     pass
 
-  def train(self, trainingData, trainingDataLabels):
+  def Train(self, trainingData, trainingDataLabels):
     """ trainingData is stored in local variables """
     # trainingExample is like 50000 X 3072 array where each row is 3072 D vector of pixel values between 0 and 1
     self.trainingExamples = trainingData
     # labels is like 50000 X 3072 array where each row is the class value i.e. 0 to 9
-    self.labels = trainingDataLabels
+    self.trainingLabels = trainingDataLabels
 
-  def predict(self, testData, predictedImages=False):
+  def Predict(self, testData, predictedImages=False):
      # testData is the N X 3072 array where each row is 3072 D vector of pixel values between 0 and 1
     totalTestRows = testData.shape[0]
     # A vector where each element is zero with N rows where each row will be predicted class i.e. 0 to 9
-    Ypred = np.zeros(totalTestRows, dtype = self.labels.dtype)
+    Ypred = np.zeros(totalTestRows, dtype = self.trainingLabels.dtype)
     Ipred = np.zeros_like(testData)
 
     # Iterate for each row in the test set
@@ -34,7 +34,7 @@ class kNN(object):
       # get the index with smallest distance
       min_index = np.argmin(distances)
       # get the class value of the respective element from the labels array 
-      Ypred[i] = self.labels[min_index] 
+      Ypred[i] = self.trainingLabels[min_index] 
       # store the match
       Ipred[i] = self.trainingExamples[min_index] 
     return Ypred, Ipred
