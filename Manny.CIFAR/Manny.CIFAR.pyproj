@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>55c17249-a748-4431-b47b-7d58234fed6e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Manny.CIFAR.py</StartupFile>
+    <StartupFile>Load.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,22 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Manny.CIFAR.py" />
+    <Compile Include="kNN\kNN.py" />
+    <Compile Include="kNN\kNNDist.py" />
+    <Compile Include="kNN\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\TestNumpyDiff.py" />
+    <Compile Include="PlotCIFAR.py" />
+    <Compile Include="Helpers\Helpers.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Load.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="kNN\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
