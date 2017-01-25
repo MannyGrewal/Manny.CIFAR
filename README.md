@@ -7,7 +7,7 @@ The structure of the project is motivated by Stanford CS231N course, however mos
 
 The code is only for educational purposes and comes as "AS IS" with no warranty.
 
-Let me know any comments of Feedback
+Let me know any comments or feedback
 
 Manny Grewal 
 Melbourne, Australia
