@@ -5,4 +5,5 @@ Through this project I have tried to demonstrate a basic bare bones structure of
 
 The structure of the project is motivated by Stanford CS231N course, however most of the code is written from scratch using Python. I have also commented the code so that it is easier to understand how the plumbing works.
 
-Manny Grewal Melbourne, Australia
+Manny Grewal 
+Melbourne, Australia
