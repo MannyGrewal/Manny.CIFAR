@@ -1,6 +1,9 @@
-import matplotlib.pyplot as plt
-import numpy as np
 import math
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+import pylab
+
 
 ########################################################################
 # 2017 -  Manny Grewal
@@ -19,14 +22,17 @@ def PlotImages(arrayImages,arrayClassLabels,reShapeRequired=False):
     
     
     totalRows= math.ceil(totalImages/MAX_COLS)  
-    fig, axes1 = plt.subplots( totalRows, MAX_COLS, figsize=(5,5))   
-    fig.tight_layout()
-
+    fig = plt.figure(figsize=(5,5)) 
+    gs = gridspec.GridSpec(totalImages, MAX_COLS)
+    # set the space between subplots and the position of the subplots in the figure
+    gs.update(wspace=0.1, hspace=0.4, left = 0.1, right = 0.7, bottom = 0.1, top = 0.9) 
+    
     arrayIndex=0
-    for row in range(totalRows):
-        for col in range(MAX_COLS):
-            if(arrayIndex<totalImages):               
-                axes1[row][col].set_axis_off()
-                axes1[row][col].set_title(arrayClassLabels[arrayIndex])
-                axes1[row][col].imshow(arrayImages[arrayIndex])
-                arrayIndex+=1
+    for g in gs:
+        if(arrayIndex<totalImages):
+            axes=plt.subplot(g)
+            axes.set_axis_off()
+            axes.set_title(arrayClassLabels[arrayIndex])
+            axes.imshow(arrayImages[arrayIndex])
+            arrayIndex+=1
+    #plt.show()

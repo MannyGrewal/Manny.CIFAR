@@ -33,6 +33,7 @@
     <Compile Include="StartupKNN.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Tests\TestMatpolib.py" />
     <Compile Include="Tests\TestNumpyDiff.py" />
     <Compile Include="CIFAR\CIFARPlotter.py" />
     <Compile Include="Helpers\Helpers.py">

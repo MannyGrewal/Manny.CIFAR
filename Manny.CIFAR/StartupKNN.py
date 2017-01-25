@@ -39,7 +39,7 @@ nn = kNN.kNN() # create a Nearest Neighbor classifier class
 nn.Train(trainingDataSet, classesTraining) # train the classifier on the training images and labels
 
 random_sample = np.random.randint(1, 9900)
-Yte_predict,Ite_match = nn.Predict(testDataSet[random_sample:random_sample+WINDOW_SIZE_OF_TEST_BATCH]) # predict labels on the test images
+Yte_predict,Ite_match = nn.Predict(testDataSet[random_sample:random_sample+WINDOW_SIZE_OF_TEST_BATCH],True) # predict labels on the test images
 # and now print the classification accuracy, which is the average number
 # of examples that are correctly predicted (i.e. label matches)
 print('accuracy: %f' % ( np.mean(Yte_predict == classesTest[random_sample:random_sample+WINDOW_SIZE_OF_TEST_BATCH])))
